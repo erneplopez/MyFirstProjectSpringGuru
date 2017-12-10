@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.com">
+<head>
+    <meta charset="UTF-8">
+    <title>My First Application</title>
+</head>
+<body>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Clients</th>
+            </tr>
+            <tr th:each="employee:${employees}">
+                <td th:text="${employee.name}"></td>
+                <td th:each="client:${employee.clients}">
+                    <div th:text="${client.name}"></div>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>
